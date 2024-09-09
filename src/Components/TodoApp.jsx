@@ -121,7 +121,7 @@ function TodoApp() {
     setTasks(updatedTasks);
     setCopyTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    toast.success("Task updated successfully!");
+    toast.success("Task Completed Successfully!");
   };
 
   const handleSearch = (e) => {
@@ -142,7 +142,7 @@ function TodoApp() {
       localStorage.setItem("tasks", JSON.stringify(updatedTasks));
       setUpdateTask(null);
       setShowModal(false);
-      toast.success("Task updated successfully!");
+      toast.success("Task Updated Successfully!");
     } else {
       toast.error("Task text cannot be empty.");
     }
@@ -181,18 +181,35 @@ function TodoApp() {
       <div className="w-full max-w-3xl bg-gradient-to-r from-purple-200 via-blue-200 to-teal-200 p-6 rounded-lg shadow-md text-black relative">
         {/* Social Media Icons */}
         <div className="absolute top-4 right-4 flex space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 flex-wrap">
-          <a href="https://github.com/Uddeshya0323" target="_blank" rel="noopener noreferrer" className="text-slate-950 text-lg sm:text-xl md:text-2xl">
+          <a
+            href="https://github.com/Uddeshya0323"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-950 text-lg sm:text-xl md:text-2xl"
+          >
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/in/uddeshya-patel-a247611b2" target="_blank" rel="noopener noreferrer" className="text-slate-950 text-lg sm:text-xl md:text-2xl">
+          <a
+            href="https://www.linkedin.com/in/uddeshya-patel-a247611b2"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-950 text-lg sm:text-xl md:text-2xl"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://uddeshya-personal-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-slate-950 text-lg sm:text-xl md:text-2xl">
+          <a
+            href="https://uddeshya-personal-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-950 text-lg sm:text-xl md:text-2xl"
+          >
             <FaLink />
           </a>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6 text-center">Task Manager</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6 text-center">
+          Task Manager
+        </h1>
 
         {/* Rotating Quotes */}
         <div className="text-center mb-6">
@@ -206,10 +223,14 @@ function TodoApp() {
             <div className="text-lg sm:text-xl font-semibold">
               {currentDate || "Loading date..."}
             </div>
-            <div className="text-lg sm:text-xl font-semibold">{currentTime || "Loading time..."}</div>
+            <div className="text-lg sm:text-xl font-semibold">
+              {currentTime || "Loading time..."}
+            </div>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-xl sm:text-2xl font-bold mb-4">{formatTime(stopwatchTime)}</div>
+            <div className="text-xl sm:text-2xl font-bold mb-4">
+              {formatTime(stopwatchTime)}
+            </div>
             <div className="flex space-x-2">
               <Button
                 variant="primary"
@@ -230,31 +251,31 @@ function TodoApp() {
         </div>
 
         {/* Task Input */}
-        <div className="flex mb-4">
+        <div className="flex flex-wrap mb-4">
           <input
             type="text"
-            className="flex-1 p-2 border border-gray-300 rounded-l-md"
+            className="flex-1 min-w-0 p-2 border border-gray-300 rounded-l-md sm:w-64"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter new task "
+            placeholder="Enter new task"
           />
           <Button
             onClick={handleAddTask}
-            className="bg-green-600 text-white p-2 rounded-r-md flex items-center hover:bg-green-700"
+            className="bg-green-600 text-white p-2 rounded-r-md flex items-center hover:bg-green-700 sm:w-32"
           >
             <FaPlus className="mr-2" /> Add Task
           </Button>
         </div>
 
         {/* Search */}
-        <div className="flex mb-4">
+        <div className="flex flex-wrap mb-4">
           <input
             type="text"
-            className="flex-1 p-2 border border-gray-300 rounded-l-md"
+            className="flex-1 min-w-0 p-2 border border-gray-300 rounded-l-md sm:w-64"
             onChange={handleSearch}
             placeholder="Search tasks"
           />
-          <Button className="bg-blue-600 text-white p-2 rounded-r-md flex items-center hover:bg-blue-700">
+          <Button className="bg-blue-600 text-white p-2 rounded-r-md flex items-center hover:bg-blue-700 sm:w-32">
             <FaSearch className="mr-2" /> Search
           </Button>
         </div>
